@@ -4,6 +4,7 @@
 #include "esp_event.h"
 #include "esp_netif.h"
 #include <string.h>
+#include "lwip/ip4_addr.h"
 
 #define WIFI_SSID "myssid"
 #define WIFI_PASS "mypassword"
