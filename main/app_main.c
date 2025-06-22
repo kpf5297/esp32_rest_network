@@ -14,6 +14,7 @@
 #include "rest_api.h"
 #include "sensor_driver.h"
 #include "actuator_driver.h"
+#include "wifi_manager.h"
 
 void initialize_network_stack(void) {
     esp_err_t ret = nvs_flash_init();
@@ -31,6 +32,7 @@ void initialize_network_stack(void) {
 void app_main(void) {
     ESP_LOGI("MAIN", "Starting RESTful ESP32 Sensor and Control Network...");
     initialize_network_stack();
+    wifi_manager_init();
 
     sensor_driver_init();
     actuator_driver_init();

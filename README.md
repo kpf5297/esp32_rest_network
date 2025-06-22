@@ -6,6 +6,7 @@ This project creates a network of **ESP32-based smart sensors and controllers**,
 
 * **Web Server**: Each ESP32 device runs a web server using the **ESP-IDF framework**.
 * **RESTful API**: Easy integration and communication via REST endpoints.
+* **Wi-Fi Connectivity**: Connects to your Wi-Fi network at startup.
 * **Actuator Control**: APIs to control LEDs, servo motors, etc.
 * **Sensor Data Access**: Endpoints to retrieve live sensor data.
 * **Modular Design**: Clean separation of headers and source files for scalability.
@@ -24,7 +25,8 @@ esp32_rest_network/
 ├── components/
 │   ├── sensor_driver/
 │   ├── actuator_driver/
-│   └── rest_api/
+│   ├── rest_api/
+│   └── wifi_manager/
 ├── main/
 │   ├── app_main.c
 │   └── ...
@@ -46,6 +48,11 @@ esp32_rest_network/
 * [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
 * RESTful HTTP Server via `esp_http_server.h`
 * JSON support via `cJSON` or equivalent
+
+### Wi-Fi setup
+
+Edit `components/wifi_manager/wifi_manager.c` and update `WIFI_SSID` and
+`WIFI_PASS` with your network credentials before flashing.
 
 ## Documentation Goals
 
